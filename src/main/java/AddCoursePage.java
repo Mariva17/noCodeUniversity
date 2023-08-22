@@ -1,12 +1,14 @@
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import java.io.File;
 
+import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
+import static org.junit.Assert.assertEquals;
 
 public class AddCoursePage {
 
@@ -14,12 +16,9 @@ public class AddCoursePage {
     private SelenideElement inputFieldCourseName = $(byCssSelector("[class='MuiInputBase-input MuiOutlinedInput-input css-q1sikp']"));
     private SelenideElement selectFieldFaculty = $(byId("course-documents-form-Faculty-1389247778"));
     private SelenideElement listOfFaculties = $(byCssSelector("[class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']"));
-    private SelenideElement facultySciences = $(byAttribute("data-value", "Sciences"));
-    private SelenideElement facultyBusinessSchool = $(byAttribute("data-value", "Business School"));
-    private SelenideElement facultyEngineering = $(byAttribute("data-value", "Engineering"));
-    private SelenideElement facultyLaw = $(byAttribute("data-value", "Law"));
-    private SelenideElement facultyMedicine = $(byAttribute("data-value", "Medicine"));
-    private SelenideElement facultyArtsDesignArchitecture = $(byAttribute("data-value", "Arts, Design & Architecture"));
+
+    private ElementsCollection facultiesName = $$(byXpath("//*[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters css-1v4ul8e']"));
+
     private SelenideElement inputFieldCourseDescription = $(byId("course-documents-form-Description-1634506682"));
 
     private SelenideElement fieldCoverPhoto = $(byCssSelector("input[type='file']"));
@@ -31,10 +30,13 @@ public class AddCoursePage {
     private SelenideElement chooseMonth = $(byCssSelector("[class='CaretRight']"));
 
     private SelenideElement chooseEndDate = $(byXpath("(//*[@class='rdrDayNumber'])/span[contains(text(), '21')]"));
+    private SelenideElement chooseErlierEndDate = $(byXpath("(//*[@class='rdrDayNumber'])/span[contains(text(), '10')]"));
 
-    private SelenideElement buttonAdd = $(byCssSelector("button[type='submit']"));
+    private SelenideElement buttonAdd = $x("//button[text()='Add']");
 
-    private SelenideElement errorCourseName = $(byXpath("(//*[@class='form-error-text'])/span"));
+    private SelenideElement errorMessage = $x("//*[@class='form-error-text']/span");
+
+    private ElementsCollection faculties = $$(byXpath("//*[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters css-1v4ul8e']/*[@class='MuiTouchRipple-root css-w0pj6f']"));
 
     public void formAddCourseIsDisplayed() {
         formAddCourse.shouldBe(visible);
@@ -44,32 +46,14 @@ public class AddCoursePage {
         inputFieldCourseName.shouldBe(visible);
         inputFieldCourseName.setValue(nameOfCourse);
     }
-    public void enterFacultySciences() {
+    public String enterFacultyName(int numberFaculty) {
         selectFieldFaculty.click();
-        facultySciences.click();
+        facultiesName.get(numberFaculty).click();
+        return selectFieldFaculty.getValue();
     }
-    public void enterFacultyBusinessSchool() {
-        selectFieldFaculty.click();
-        facultyBusinessSchool.click();
-    }
-    public void enterFacultyEngineering() {
-        selectFieldFaculty.click();
-        facultyEngineering.click();
-    }
-    public void enterFacultyLaw() {
-        selectFieldFaculty.click();
-        facultyLaw.click();
-    }
-    public void enterFacultyMedicine() {
-        selectFieldFaculty.click();
-        facultyMedicine.click();
-    }
-    public void enterFacultyArtsDesignArchitecture() {
-        selectFieldFaculty.click();
-        facultyArtsDesignArchitecture.click();
-    }
+
     public void checkFacultyName(String facultyName) {
-        selectFieldFaculty.shouldHave(text(facultyName));
+        selectFieldFaculty.shouldHave(exactText(facultyName));
     }
 
     public void enterCourseDescription(String text) {
@@ -85,12 +69,7 @@ public class AddCoursePage {
     }
 
 
-    //    public void setDateByName(SelenideElement name, String date) {
-//        executeJavaScript(
-//                String.format("$('[name=\"%s\"]').val('%s')",
-//                        name, date)
-//        );
-//    }
+
     public void enterStartDate() {
         fieldStartDate.click();
         chooseStartDate.click();
@@ -100,11 +79,25 @@ public class AddCoursePage {
         chooseMonth.click();
         chooseEndDate.click();
     }
+    public void enterInvalidEndDate() {
+        fieldEndDate.click();
+        chooseErlierEndDate.click();
+    }
     public void pushButtonAdd() {
+
+        buttonAdd.shouldBe(visible);
         buttonAdd.click();
     }
-    public void checkErrorMessage(String errorMessage) {
-        errorCourseName.shouldHave(text(errorMessage));
+    public void checkErrorMessage(String errorText) {
+
+        errorMessage.shouldBe(visible);
+       // errorMessage.getValue();
+        assertEquals(errorMessage.getValue(), errorText);
+    }
+
+    public void checkQuantityOfFaculties(Integer quantityOfFaculties) {
+        selectFieldFaculty.click();
+        faculties.filterBy(visible).shouldHave(size(quantityOfFaculties));
     }
 
 

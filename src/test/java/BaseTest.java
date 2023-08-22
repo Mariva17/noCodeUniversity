@@ -49,6 +49,12 @@ public class BaseTest {
 
     Header header = new Header();
 
+    CoursesPage coursesPage = new CoursesPage();
+
+    StudentDirectoryPage studentDirectoryPage = new StudentDirectoryPage();
+
+    ProfileOfStudentPage profileOfStudentPage = new ProfileOfStudentPage();
+
 
     public static String randomString(){
         String generatedString= RandomStringUtils.randomAlphabetic(15);

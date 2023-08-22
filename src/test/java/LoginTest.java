@@ -1,6 +1,8 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import utils.PropertiesLoader;
 
+@DisplayName("Authorization Tests")
 public class LoginTest extends BaseTest {
 
     private String userStudent = PropertiesLoader.loadProperties("userStudent");
@@ -12,6 +14,7 @@ public class LoginTest extends BaseTest {
     private String teacherPassword = PropertiesLoader.loadProperties("teacherPassword");
 
     @Test
+    @DisplayName("Authorization of Student with valid data")
     public void successLoginOfStudent() {
         homePage.goToTheLoginPage();
         loginPage.enterEmail(userStudent);
@@ -21,6 +24,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Authorization of Teacher with valid data")
     public void successLoginOfTeacher() {
         homePage.goToTheLoginPage();
         loginPage.enterEmail(userTeacher);
@@ -30,6 +34,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Unsuccessful authorization of user with invalid password")
     public void invalidPassword() {
         homePage.goToTheLoginPage();
         loginPage.enterEmail(userStudent);
@@ -39,6 +44,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Unsuccessful authorization of user with invalid email")
     public void invalidEmail() {
         homePage.goToTheLoginPage();
         loginPage.enterEmail("marg@gmail.com");
@@ -47,6 +53,7 @@ public class LoginTest extends BaseTest {
         loginPage.checkErrorMessage("Invalid email or password");
     }
     @Test
+    @DisplayName("Unsuccessful authorization of user with empty fields")
     public void emptyInputFields() {
         homePage.goToTheLoginPage();
         loginPage.enterEmail("");
@@ -55,6 +62,7 @@ public class LoginTest extends BaseTest {
         loginPage.checkErrorMessage("Invalid email or password");
     }
     @Test
+    @DisplayName("Unsuccessful authorization of user with empty field Email")
     public void emptyInputFieldEmail() {
         homePage.goToTheLoginPage();
         loginPage.enterEmail("");
@@ -64,6 +72,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Unsuccessful authorization of user with empty field Password")
     public void emptyInputFieldPassword() {
         homePage.goToTheLoginPage();
         loginPage.enterEmail(userStudent);
@@ -73,12 +82,14 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Button Sign Up leads to the Registration page")
     public void checkButtonSignUp() {
         homePage.goToTheLoginPage();
         loginPage.pushSignUpButton();
         registrationPage.checkFormOfRegistration();
     }
     @Test
+    @DisplayName("Button Forgot password leads to the Forgot password page where input field Email is displayed")
     public void forgotPassword() {
         homePage.goToTheLoginPage();
         loginPage.followTheForgotPasswordLink();

@@ -4,39 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f08814ce-3ced-4a96-810e-0799510b5722" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AddCoursePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ForgotPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Header.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MainStudentPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MainTeacherPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ProfessorsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ProfileOfTeacherPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RegistrationPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/UserProfilePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/PropertiesLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/test.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/data/Photo_Avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/data/Photo_QA2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/data/Photo_Testing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/AddCourseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/HomeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RegistrationNewUserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/UserProfileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/api/ApiBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/api/dto/ValidUserRequest.java" afterDir="false" />
+    <list default="true" id="f08814ce-3ced-4a96-810e-0799510b5722" name="Changes" comment="First commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CoursesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProfileOfStudentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/StudentDirectoryPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CoursesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ProfessorsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/StudentDirectoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AddCoursePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AddCoursePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainStudentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainStudentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProfessorsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProfessorsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProfileOfTeacherPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProfileOfTeacherPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AddCourseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AddCourseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationNewUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationNewUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserProfileTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,64 +51,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/mariv/IdeaProjects/noCodeUniversity/src/test/data"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariv/IdeaProjects/noCodeUniversity/src/test/data&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mariv\IdeaProjects\noCodeUniversity\src\test\data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserProfileTest.editProfileDetails">
-    <configuration name="AddCourseTest.checkTheButtonAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RegistrationNewUserTest.successfulRegistrationStudentTest">
+    <configuration name="AddCourseTest.emptyFieldCourseDescription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="noCodeUniversity" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AddCourseTest" />
-      <option name="METHOD_NAME" value="checkTheButtonAdd" />
+      <option name="METHOD_NAME" value="emptyFieldCourseDescription" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddCourseTest.emptyFieldFaculty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="noCodeUniversity" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserProfileTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserProfileTest.editProfileDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="noCodeUniversity" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserProfileTest" />
-      <option name="METHOD_NAME" value="editProfileDetails" />
+      <option name="MAIN_CLASS_NAME" value="AddCourseTest" />
+      <option name="METHOD_NAME" value="emptyFieldFaculty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest.unsuccessfulChangePasswordWithInvalidOldPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddCourseTest.erlierThanStartDateDataInFieldEndDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="noCodeUniversity" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserProfileTest" />
-      <option name="METHOD_NAME" value="unsuccessfulChangePasswordWithInvalidOldPassword" />
+      <option name="MAIN_CLASS_NAME" value="AddCourseTest" />
+      <option name="METHOD_NAME" value="erlierThanStartDateDataInFieldEndDate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest.uploadProfileImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddCourseTest.successfulCourseAddition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="noCodeUniversity" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserProfileTest" />
-      <option name="METHOD_NAME" value="uploadProfileImage" />
+      <option name="MAIN_CLASS_NAME" value="AddCourseTest" />
+      <option name="METHOD_NAME" value="successfulCourseAddition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationNewUserTest.successfulRegistrationStudentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="noCodeUniversity" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RegistrationNewUserTest" />
+      <option name="METHOD_NAME" value="successfulRegistrationStudentTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserProfileTest.editProfileDetails" />
-        <item itemvalue="JUnit.UserProfileTest.uploadProfileImage" />
-        <item itemvalue="JUnit.UserProfileTest.unsuccessfulChangePasswordWithInvalidOldPassword" />
-        <item itemvalue="JUnit.UserProfileTest" />
-        <item itemvalue="JUnit.AddCourseTest.checkTheButtonAdd" />
+        <item itemvalue="JUnit.RegistrationNewUserTest.successfulRegistrationStudentTest" />
+        <item itemvalue="JUnit.AddCourseTest.emptyFieldCourseDescription" />
+        <item itemvalue="JUnit.AddCourseTest.erlierThanStartDateDataInFieldEndDate" />
+        <item itemvalue="JUnit.AddCourseTest.successfulCourseAddition" />
+        <item itemvalue="JUnit.AddCourseTest.emptyFieldFaculty" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +134,14 @@
       <option name="presentableId" value="Default" />
       <updated>1692352960479</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1692387124404</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692387124404</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,5 +154,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
 </project>

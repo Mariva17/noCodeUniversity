@@ -1,13 +1,15 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import utils.PropertiesLoader;
 
+@DisplayName("Profile of user edit Tests")
 public class UserProfileTest extends BaseTest {
 
     private String userTeacher = PropertiesLoader.loadProperties("userTeacher");
 
     private String teacherPassword = PropertiesLoader.loadProperties("teacherPassword");
 
-    private String changedFullName = "Maggi Baggi2";
+    private String changedFullName = "Mariva Baggi2";
     private String textAbout = randomString();
 
     private String photoPath = "src/test/data/Photo_Avatar.jpg";
@@ -16,6 +18,7 @@ public class UserProfileTest extends BaseTest {
 
 
     @Test
+    @DisplayName("Successful edit of User Profile details")
     public void editProfileDetails() {
         homePage.goToTheLoginPage();
         loginPage.successfulLogin(userTeacher, teacherPassword);
@@ -27,12 +30,14 @@ public class UserProfileTest extends BaseTest {
         userProfilePage.fillTextareaAbout(textAbout);
         userProfilePage.uploadAvatarFile(photoPath);
         userProfilePage.pushTheButtonUpdateProfile();
-        header.goToThePageProfessors();
+        header.pushTheButtonProfessors();
         professorsPage.fillTheSearchField(changedFullName);
+        professorsPage.checkListOfTeachersIsDisplayed();
         professorsPage.checkNameOfSelectedProfessor(changedFullName);
     }
 
     @Test
+    @DisplayName("Uploaded image of users profile is successful")
     public void uploadProfileImage() {
         homePage.goToTheLoginPage();
         loginPage.successfulLogin(userTeacher, teacherPassword);
@@ -42,12 +47,13 @@ public class UserProfileTest extends BaseTest {
         userProfilePage.checkEmailInProfile(userTeacher);
         userProfilePage.uploadAvatarFile(photoPath);
         userProfilePage.pushTheButtonUpdateProfile();
-        header.goToThePageProfessors();
+        header.pushTheButtonProfessors();
         professorsPage.fillTheSearchField(userTeacher);
         professorsPage.checkProfileImage();
     }
 
     @Test
+    @DisplayName("Change of password of users profile is successful")
     public void changePasswordInProfile() {
         homePage.goToTheLoginPage();
         loginPage.successfulLogin(userTeacher, teacherPassword);
@@ -63,6 +69,7 @@ public class UserProfileTest extends BaseTest {
         mainTeacherPage.buttonAddCourseIsVisible();
     }
     @Test
+    @DisplayName("Change of password of users profile with empty new password is unsuccessful")
     public void unsuccessfulChangePasswordWithEmptyNewPassword() {
         homePage.goToTheLoginPage();
         loginPage.successfulLogin(userTeacher, teacherPassword);
@@ -76,6 +83,7 @@ public class UserProfileTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Change of password of users profile with empty old password is unsuccessful")
     public void unsuccessfulChangePasswordWithEmptyOldPassword() {
         homePage.goToTheLoginPage();
         loginPage.successfulLogin(userTeacher, teacherPassword);
@@ -88,6 +96,7 @@ public class UserProfileTest extends BaseTest {
         userProfilePage.checkErrorMessageWithInvalidOldPassword("Something went wrong, please try again.");
     }
     @Test
+    @DisplayName("Change of password of users profile with invalid old password is unsuccessful")
     public void unsuccessfulChangePasswordWithInvalidOldPassword() {
         homePage.goToTheLoginPage();
         loginPage.successfulLogin(userTeacher, teacherPassword);

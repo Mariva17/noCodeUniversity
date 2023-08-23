@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
@@ -34,7 +35,7 @@ public class AddCoursePage {
 
     private SelenideElement buttonAdd = $x("//button[text()='Add']");
 
-    private SelenideElement errorMessage = $x("//*[@class='form-error-text']/span");
+    private SelenideElement errorMessage = $x("//*[@class='form-error-text']");
 
     private ElementsCollection faculties = $$(byXpath("//*[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters css-1v4ul8e']/*[@class='MuiTouchRipple-root css-w0pj6f']"));
 
@@ -84,15 +85,14 @@ public class AddCoursePage {
         chooseErlierEndDate.click();
     }
     public void pushButtonAdd() {
-
         buttonAdd.shouldBe(visible);
         buttonAdd.click();
     }
-    public void checkErrorMessage(String errorText) {
 
-        errorMessage.shouldBe(visible);
-       // errorMessage.getValue();
-        assertEquals(errorMessage.getValue(), errorText);
+    public void checkErrorMessage(String errorText) {
+        buttonAdd.click();
+        errorMessage.shouldBe(visible, exist);
+        errorMessage.shouldHave(text(errorText));
     }
 
     public void checkQuantityOfFaculties(Integer quantityOfFaculties) {

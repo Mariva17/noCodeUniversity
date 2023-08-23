@@ -2,6 +2,8 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import utils.PropertiesLoader;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 @DisplayName("Add New Course Tests")
 public class AddCourseTest extends BaseTest {
 
@@ -48,85 +50,89 @@ public class AddCourseTest extends BaseTest {
         addCoursePage.pushButtonAdd();
         profileOfTeacherPage.urlIsCorrect();
     }
-//    @Test
-//    public void emptyFieldCourseName() {
-//        homePage.goToTheLoginPage();
-//        loginPage.successfulLogin(userTeacher, teacherPassword);
-//        mainTeacherPage.buttonAddCourseIsVisible();
-//        header.goToThePageAddCourse();
-//        addCoursePage.formAddCourseIsDisplayed();
-//        addCoursePage.enterFacultyName(3);
-//        addCoursePage.enterCourseDescription("New methods in Sciences.");
-//        addCoursePage.uploadFile(photoOfCourse);
-//        addCoursePage.checkUploadedFile(".*Photo.*");
-//        addCoursePage.enterStartDate();
-//        addCoursePage.enterEndDate();
-//        addCoursePage.pushButtonAdd();
-//        addCoursePage.checkErrorMessage("Course name is required");
-//    }
-//    @Test
-//    public void emptyFieldFaculty() {
-//        homePage.goToTheLoginPage();
-//        loginPage.successfulLogin(userTeacher, teacherPassword);
-//        mainTeacherPage.buttonAddCourseIsVisible();
-//        header.goToThePageAddCourse();
-//        addCoursePage.formAddCourseIsDisplayed();
-//        addCoursePage.enterCourseName("New Course-3");
-//        addCoursePage.enterCourseDescription("New methods in Sciences.");
-//        addCoursePage.enterStartDate();
-//        addCoursePage.enterEndDate();
-//        sleep(2000);
-//        addCoursePage.pushButtonAdd();
-//        addCoursePage.checkErrorMessage("Faculty is required");
-//    }
-//    @Test
-//    public void emptyFieldCourseDescription() {
-//        homePage.goToTheLoginPage();
-//        loginPage.successfulLogin(userTeacher, teacherPassword);
-//        mainTeacherPage.buttonAddCourseIsVisible();
-//        header.goToThePageAddCourse();
-//        addCoursePage.formAddCourseIsDisplayed();
-//        addCoursePage.enterCourseName("New Course-3");
-//        addCoursePage.enterFacultyName(2);
-//        addCoursePage.uploadFile(photoOfCourse);
-//        addCoursePage.checkUploadedFile(".*Photo.*");
-//        addCoursePage.enterStartDate();
-//        addCoursePage.enterEndDate();
-//        addCoursePage.pushButtonAdd();
-//        addCoursePage.checkErrorMessage("Course description is required");
-//    }
-//    @Test
-//    public void emptyFieldStartDate() {
-//        homePage.goToTheLoginPage();
-//        loginPage.successfulLogin(userTeacher, teacherPassword);
-//        mainTeacherPage.buttonAddCourseIsVisible();
-//        header.goToThePageAddCourse();
-//        addCoursePage.formAddCourseIsDisplayed();
-//        addCoursePage.enterCourseName("New Course-3");
-//        addCoursePage.enterFacultyName(6);
-//        addCoursePage.enterCourseDescription("New methods in Sciences.");
-//        addCoursePage.uploadFile(photoOfCourse);
-//        addCoursePage.checkUploadedFile(".*Photo.*");
-//        addCoursePage.enterEndDate();
-//        addCoursePage.pushButtonAdd();
-//        addCoursePage.checkErrorMessage("Course start date is required");
-//    }
-//    @Test
-//    public void emptyFieldEndDate() {
-//        homePage.goToTheLoginPage();
-//        loginPage.successfulLogin(userTeacher, teacherPassword);
-//        mainTeacherPage.buttonAddCourseIsVisible();
-//        header.goToThePageAddCourse();
-//        addCoursePage.formAddCourseIsDisplayed();
-//        addCoursePage.enterCourseName("New Course-3");
-//        addCoursePage.enterFacultyName(5);
-//        addCoursePage.enterCourseDescription("New methods in Sciences.");
-//        addCoursePage.uploadFile(photoOfCourse);
-//        addCoursePage.checkUploadedFile(".*Photo.*");
-//        addCoursePage.enterStartDate();
-//        addCoursePage.pushButtonAdd();
-//        addCoursePage.checkErrorMessage("Course end date is required");
-//    }
+    @Test
+    @DisplayName("By empty field Course Name impossible addition of the new Course")
+    public void emptyFieldCourseName() {
+        homePage.goToTheLoginPage();
+        loginPage.successfulLogin(userTeacher, teacherPassword);
+        mainTeacherPage.buttonAddCourseIsVisible();
+        header.goToThePageAddCourse();
+        addCoursePage.formAddCourseIsDisplayed();
+        addCoursePage.enterFacultyName(3);
+        addCoursePage.enterCourseDescription("New methods in Sciences.");
+        addCoursePage.uploadFile(photoOfCourse);
+        addCoursePage.checkUploadedFile(".*Photo.*");
+        addCoursePage.enterStartDate();
+        addCoursePage.enterEndDate();
+        addCoursePage.pushButtonAdd();
+        addCoursePage.checkErrorMessage("Course name is required");
+    }
+    @Test
+    @DisplayName("By empty field Faculty impossible addition of the new Course")
+    public void emptyFieldFaculty() {
+        homePage.goToTheLoginPage();
+        loginPage.successfulLogin(userTeacher, teacherPassword);
+        mainTeacherPage.buttonAddCourseIsVisible();
+        header.goToThePageAddCourse();
+        addCoursePage.formAddCourseIsDisplayed();
+        addCoursePage.enterCourseName("New Course-3");
+        addCoursePage.enterCourseDescription("New methods in Sciences.");
+        addCoursePage.enterStartDate();
+        addCoursePage.enterEndDate();
+        addCoursePage.pushButtonAdd();
+        addCoursePage.checkErrorMessage("Faculty is required");
+    }
+    @Test
+    @DisplayName("By empty field Course Description impossible addition of the new Course")
+    public void emptyFieldCourseDescription() {
+        homePage.goToTheLoginPage();
+        loginPage.successfulLogin(userTeacher, teacherPassword);
+        mainTeacherPage.buttonAddCourseIsVisible();
+        header.goToThePageAddCourse();
+        addCoursePage.formAddCourseIsDisplayed();
+        addCoursePage.enterCourseName("New Course-3");
+        addCoursePage.enterFacultyName(2);
+        addCoursePage.uploadFile(photoOfCourse);
+        addCoursePage.checkUploadedFile(".*Photo.*");
+        addCoursePage.enterStartDate();
+        addCoursePage.enterEndDate();
+        addCoursePage.pushButtonAdd();
+        addCoursePage.checkErrorMessage("Course description is required");
+    }
+    @Test
+    @DisplayName("By empty field StartDate impossible addition of the new Course")
+    public void emptyFieldStartDate() {
+        homePage.goToTheLoginPage();
+        loginPage.successfulLogin(userTeacher, teacherPassword);
+        mainTeacherPage.buttonAddCourseIsVisible();
+        header.goToThePageAddCourse();
+        addCoursePage.formAddCourseIsDisplayed();
+        addCoursePage.enterCourseName("New Course-3");
+        addCoursePage.enterFacultyName(4);
+        addCoursePage.enterCourseDescription("New methods in Sciences.");
+        addCoursePage.uploadFile(photoOfCourse);
+        addCoursePage.checkUploadedFile(".*Photo.*");
+        addCoursePage.enterEndDate();
+        addCoursePage.pushButtonAdd();
+        addCoursePage.checkErrorMessage("Course start date is required");
+    }
+    @Test
+    @DisplayName("By empty field EndDate impossible addition of the new Course")
+    public void emptyFieldEndDate() {
+        homePage.goToTheLoginPage();
+        loginPage.successfulLogin(userTeacher, teacherPassword);
+        mainTeacherPage.buttonAddCourseIsVisible();
+        header.goToThePageAddCourse();
+        addCoursePage.formAddCourseIsDisplayed();
+        addCoursePage.enterCourseName("New Course-3");
+        addCoursePage.enterFacultyName(5);
+        addCoursePage.enterCourseDescription("New methods in Sciences.");
+        addCoursePage.uploadFile(photoOfCourse);
+        addCoursePage.checkUploadedFile(".*Photo.*");
+        addCoursePage.enterStartDate();
+        addCoursePage.pushButtonAdd();
+        addCoursePage.checkErrorMessage("Course end date is required");
+    }
     @Test
     @DisplayName("EndDate of the new Course must be later, than StartDate of the Course")
     public void erlierThanStartDateDataInFieldEndDate() {

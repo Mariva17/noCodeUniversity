@@ -14,7 +14,7 @@ public class UserProfileTest extends BaseTest {
 
     private String photoPath = "src/test/data/Photo_Avatar.jpg";
 
-    private String newPassword = "123456";
+    private String newPassword = "1234567";
 
 
     @Test
@@ -103,7 +103,7 @@ public class UserProfileTest extends BaseTest {
         header.pushButtonAvatar();
         header.pushButtonMyProfile();
    //     userProfilePage.checkFieldRole("teacher");
-        userProfilePage.fillInputFieldOldPassword("1234567");
+        userProfilePage.fillInputFieldOldPassword("123477");
         userProfilePage.fillInputFieldNewPassword(newPassword);
         userProfilePage.pushTheButtonChangePassword();
         userProfilePage.checkErrorMessageWithInvalidOldPassword("Something went wrong, please try again.");

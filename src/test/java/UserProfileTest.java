@@ -102,7 +102,6 @@ public class UserProfileTest extends BaseTest {
         loginPage.successfulLogin(userTeacher, teacherPassword);
         header.pushButtonAvatar();
         header.pushButtonMyProfile();
-   //     userProfilePage.checkFieldRole("teacher");
         userProfilePage.fillInputFieldOldPassword("123477");
         userProfilePage.fillInputFieldNewPassword(newPassword);
         userProfilePage.pushTheButtonChangePassword();

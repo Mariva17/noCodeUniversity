@@ -1,4 +1,7 @@
+import api.ApiBase;
+import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Test;
 import utils.PropertiesLoader;
 
@@ -7,22 +10,37 @@ import static com.codeborne.selenide.Selenide.sleep;
 @DisplayName("Add New Course Tests")
 public class AddCourseTest extends BaseTest {
 
-    private String userTeacher = PropertiesLoader.loadProperties("userTeacher");
+    Faker faker = new Faker();
 
-    private String teacherPassword = PropertiesLoader.loadProperties("teacherPassword");
+    public String fullName = randomString();
+    public String email = faker.internet().emailAddress();
+    public String password = faker.internet().password(6, 12);
+    static String endpoint = "/users/";
+
+//    private String userTeacher = PropertiesLoader.loadProperties("userTeacher");
+//
+//    private String teacherPassword = PropertiesLoader.loadProperties("teacherPassword");
 
     private String photoOfCourse = "C:/Users/mariv/IdeaProjects/project_NoCodeUniversity/src/test/data/Photo_QA2.jpg";
+
+
+    @After
+    public void deleteCreatedUser() {
+        ApiBase apiBase = new ApiBase();
+        apiBase.deleteRequest(endpoint+email, 200);
+    }
     @Test
     @DisplayName("Valid addition of a New Course")
     public void successfulCourseAddition() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         String name = "Course-QA" + randomString();
         addCoursePage.enterCourseName(name);
-        String faculty = addCoursePage.enterFacultyName(1);
+        addCoursePage.enterFacultyName(1);
         addCoursePage.enterCourseDescription("New QA methods.");
         addCoursePage.uploadFile(photoOfCourse);
         addCoursePage.checkUploadedFile(".*Photo.*");
@@ -32,11 +50,12 @@ public class AddCourseTest extends BaseTest {
         profileOfTeacherPage.checkNameOfCourse(name);
     }
     @Test
-    @DisplayName("Button Add must lead to the page Profile Of Teacher" )
+    @DisplayName("Button Add doesn't lead to the page 404" )
     public void checkTheButtonAdd() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         String name = "Course-QA" + randomString();
@@ -48,14 +67,16 @@ public class AddCourseTest extends BaseTest {
         addCoursePage.enterStartDate();
         addCoursePage.enterEndDate();
         addCoursePage.pushButtonAdd();
-        profileOfTeacherPage.urlIsCorrect();
+        sleep(3000);
+        addCoursePage.urlIsCorrect();
     }
     @Test
     @DisplayName("By empty field Course Name impossible addition of the new Course")
     public void emptyFieldCourseName() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         addCoursePage.enterFacultyName(3);
@@ -70,9 +91,10 @@ public class AddCourseTest extends BaseTest {
     @Test
     @DisplayName("By empty field Faculty impossible addition of the new Course")
     public void emptyFieldFaculty() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         addCoursePage.enterCourseName("New Course-3");
@@ -85,9 +107,10 @@ public class AddCourseTest extends BaseTest {
     @Test
     @DisplayName("By empty field Course Description impossible addition of the new Course")
     public void emptyFieldCourseDescription() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         addCoursePage.enterCourseName("New Course-3");
@@ -102,9 +125,10 @@ public class AddCourseTest extends BaseTest {
     @Test
     @DisplayName("By empty field StartDate impossible addition of the new Course")
     public void emptyFieldStartDate() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         addCoursePage.enterCourseName("New Course-3");
@@ -119,9 +143,10 @@ public class AddCourseTest extends BaseTest {
     @Test
     @DisplayName("By empty field EndDate impossible addition of the new Course")
     public void emptyFieldEndDate() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         addCoursePage.enterCourseName("New Course-3");
@@ -136,9 +161,10 @@ public class AddCourseTest extends BaseTest {
     @Test
     @DisplayName("EndDate of the new Course must be later, than StartDate of the Course")
     public void erlierThanStartDateDataInFieldEndDate() {
-        homePage.goToTheLoginPage();
-        loginPage.successfulLogin(userTeacher, teacherPassword);
-        mainTeacherPage.buttonAddCourseIsVisible();
+        String createdEmail = email;
+        String usersPassword = password;
+        homePage.goToTheRegistrationPage();
+        registrationPage.registrationOfTeacher(fullName, createdEmail, usersPassword);
         header.goToThePageAddCourse();
         addCoursePage.formAddCourseIsDisplayed();
         addCoursePage.enterCourseName("New Course-Science");

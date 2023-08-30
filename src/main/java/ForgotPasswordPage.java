@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ForgotPasswordPage {
 
-    private SelenideElement inputFieldEmail = $(byCssSelector("[placeholder='email']"));
+    private SelenideElement inputFieldEmail = $(byCssSelector("[placeholder='Email']"));
 
     public void urlIsCorrect() {
         assertTrue(WebDriverRunner.getWebDriver().getCurrentUrl().contains("forgot-password"));

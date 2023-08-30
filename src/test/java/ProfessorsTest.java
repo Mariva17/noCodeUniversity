@@ -25,8 +25,8 @@ public class ProfessorsTest extends BaseTest {
         homePage.goToTheLoginPage();
         loginPage.successfulLogin(userTeacher, teacherPassword);
         professorsPage.checkListOfTeachersIsDisplayed();
-        professorsPage.fillTheSearchField("malov");
-        professorsPage.checkNameOfSelectedProfessor("Diana Malov");
+        professorsPage.fillTheSearchField("roxan");
+        professorsPage.checkNameOfSelectedProfessor("Roxane");
         professorsPage.goToTheProfileOfProfessor();
         profileOfTeacherPage.checkImageOfProfile();
     }

@@ -18,7 +18,7 @@ public class ProfileOfTeacherPage {
 
     private SelenideElement nameOfCourse = $(byXpath("//h3[contains(text(), 'New Course-2')]"));
 
-    private ElementsCollection imageOfProfile = $$(byXpath("//*[@class='static-image']"));
+    private ElementsCollection imageOfProfile = $$(byXpath("(//*[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 css-mfstbn'])//*[contains(@class, 'static-image')]"));
 
 
     public void urlIsCorrect() {

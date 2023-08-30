@@ -63,5 +63,22 @@ public class RegistrationPage {
         errorMessageOfPassword.shouldHave(text(errorText));
     }
 
+    public void registrationOfStudent(String name, String email, String password) {
+        selectRoleStudent();
+        enterFullName(name);
+        enterEmail(email);
+        enterPassword(password);
+        clickOnCheckBox();
+        pushButtonSignUp();
+    }
+
+    public void registrationOfTeacher(String name, String email, String password) {
+        selectRoleTeacher();
+        enterFullName(name);
+        enterEmail(email);
+        enterPassword(password);
+        clickOnCheckBox();
+        pushButtonSignUp();
+    }
 
 }

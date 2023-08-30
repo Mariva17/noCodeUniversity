@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 
 import java.io.File;
 
@@ -10,6 +11,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class AddCoursePage {
 
@@ -99,6 +101,9 @@ public class AddCoursePage {
         selectFieldFaculty.click();
         faculties.filterBy(visible).shouldHave(size(quantityOfFaculties));
     }
-
+    public void urlIsCorrect() {
+        sleep(3000);
+        assertTrue(WebDriverRunner.getWebDriver().getCurrentUrl().contains("add-course"));
+    }
 
 }

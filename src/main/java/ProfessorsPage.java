@@ -20,8 +20,6 @@ public class ProfessorsPage {
 
 
     public void fillTheSearchField(String name) {
-     //   sleep(3000);
-     //   inputSearch.scrollIntoView(false);
         inputSearch.shouldBe(enabled);
         inputSearch.setValue(name);
 
